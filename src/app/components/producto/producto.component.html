@@ -1,0 +1,51 @@
+<div class="container" style="max-width: 50%; margin-top: 50px;">
+    <div class="row justify-content-md-center">
+      <div class="col col-4">
+        <div class="card">
+          <div placeholder="Buscar por DNI de Barra o Nombre de Cliente"></div>
+          <div class="card-header bg-primary">
+              <h5 class="card-title" style="color: white;"> Producto</h5> 
+          </div>
+          <div class="card-body"> 
+              <div class="form-group">
+                  <label for="a"></label>
+                  <input type="hidden" name="idrol" class="form-control" [(ngModel)]="productoModel.idproducto">
+                  <input type="hidden" name="stock" class="form-control" [(ngModel)]="productoModel.stock"> 
+                  <input type="hidden" name="nomprod" class="form-control" [(ngModel)]="productoModel.nomprod"> 
+                  <input type="hidden" name="precio" class="form-control" [(ngModel)]="productoModel.precio">
+              </div>
+              <div class="form-group">
+              </div>           
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ITEM</th>
+              <th scope="col">CANTIDAD</th>
+              <th scope="col">PRODUCTO</th>
+              <th scope="col">PRECIO</th>
+              <th scope="coll" colspan="2">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rol of roles">
+              <td>{{rol.IDPRODUCTO}}</td>
+              <td>{{rol.STOCK}}</td>
+              <td>{{rol.NOMPROD}}</td>
+              <td>{{rol.PRECIO}}</td>
+              <td>
+                <a type="button" class="btn btn-warning" (click)="cargarRol(rol.IDPRODUCTO)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+              </td>
+              <td>
+                <a type="button" class="btn btn-danger"(click)="delLogica(rol.IDROL)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+              </td>
+            </tr>          
+          </tbody>
+        </table>
+      </div>
+  </div>
+  </div>
+  
